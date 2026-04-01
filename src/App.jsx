@@ -28,7 +28,7 @@ export default function App() {
         <div className="pt-[67px]">
           <Routes>
             <Route path="/" element={<Inicio />} />
-            <Route path="/slpage" element={<SLPage />} />
+            <Route path="/smart-lights" element={<SLPage />} />
             <Route path="/soluciones" element={<SolucionesPage />} />
             <Route path="/hardware" element={<HardwarePage />} />
             <Route path="/nosotros" element={<NosotrosPage />} />

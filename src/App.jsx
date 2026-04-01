@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import Inicio from './components/Inicio'
-import SLpage from './components/SLpage'
+import SLPage from './components/SLPage'
 import SolucionesPage from './components/SolucionesPage'
 import HardwarePage from './components/HardwarePage'
 import NosotrosPage from './components/NosotrosPage'
@@ -28,7 +28,7 @@ export default function App() {
         <div className="pt-[67px]">
           <Routes>
             <Route path="/" element={<Inicio />} />
-            <Route path="/smart-lights" element={<SLpage />} />
+            <Route path="/slpage" element={<SLPage />} />
             <Route path="/soluciones" element={<SolucionesPage />} />
             <Route path="/hardware" element={<HardwarePage />} />
             <Route path="/nosotros" element={<NosotrosPage />} />

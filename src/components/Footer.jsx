@@ -12,7 +12,7 @@ export default function Footer() {
       </a>
 
       <div className="text-white text-[12px] leading-[15px] space-y-1 font-['Raleway']">
-        <p>Tel: +54911-6500-6000 - dmenke@kiwatec.net</p>
+        <p>Tel: +54911-6500-6000 -  info@kiwatec.net</p>
         <p>Melian 3552 2A - Buenos Aires - Argentina</p>
       </div>
     </footer>

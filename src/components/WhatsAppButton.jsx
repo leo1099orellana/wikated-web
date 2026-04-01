@@ -1,4 +1,4 @@
-export default function WhatsAppButton({ phone = "+54911-6500-6000" }) {
+export default function WhatsAppButton({ phone = "5491165006000" }) {
   return (
     <a
       href={`https://wa.me/${phone}`}

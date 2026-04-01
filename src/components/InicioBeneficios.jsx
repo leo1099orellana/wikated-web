@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Beneficios() {
   return (
     <section className="py-16 px-6" style={{ background: 'linear-gradient(180deg, #030C40 0%, #172555 100%)' }}>
@@ -20,12 +22,12 @@ export default function Beneficios() {
             energético y permite a los operadores actuar desde cualquier lugar,
             en tiempo real.
           </p>
-          <a
-            href="#beneficios"
+          <Link
+            to="/beneficios"
             className="inline-block bg-[#0F1B3D] border border-white text-white text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-[#01051c] transition-colors duration-200"
           >
             Conocer más
-          </a>
+          </Link>
         </div>
       </div>
     </section>

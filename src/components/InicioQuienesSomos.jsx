@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function QuienesSomos() {
   return (
     <section className="py-20 px-6 bg-gradient-to-b from-[#030C40] to-[#172555] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
@@ -14,12 +16,12 @@ export default function QuienesSomos() {
             automatizar el mantenimiento y construir entornos más seguros,
             eficientes y sostenibles.
           </p>
-          <a
-            href="#"
+          <Link
+            to="/nosotros"
             className="inline-flex items-center justify-center w-[190px] h-[40px] bg-[#030C40] hover:bg-[#01051c] text-white text-base font-bold font-['Raleway',sans-serif] border border-white rounded-[10px] shadow-[0px_4px_4px_2px_rgba(0,0,0,0.25)] no-underline transition-colors duration-300 ease-in-out"
           >
             Conocer más
-          </a>
+          </Link>
         </div>
 
         <div className="w-full md:w-[55%]">
@@ -31,5 +33,5 @@ export default function QuienesSomos() {
         </div>
       </div>
     </section>
-  );
+  )
 }

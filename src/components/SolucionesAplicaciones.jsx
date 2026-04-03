@@ -51,14 +51,13 @@ const aplicaciones = [
 
 export default function SolucionesAplicaciones() {
   return (
-    <section className="w-full bg-[#172555]">
+    <section className="w-full bg-[#172555] overflow-hidden">
       {aplicaciones.map((item) => (
         <div key={item.id} className="w-full py-10 md:py-16 border-t border-white/10">
-          <div className={`max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8 md:gap-[59px] ${
+          <div className={`max-w-6xl mx-auto px-6 flex flex-col items-center gap-8 md:gap-[59px] ${
             item.imagenIzquierda ? 'md:flex-row' : 'md:flex-row-reverse'
           }`}>
-            {/* Texto primero en mobile */}
-            <div className="w-full md:w-[386px] md:flex-shrink-0 flex flex-col gap-5 md:gap-[28px] order-1 md:order-none">
+            <div className="w-full md:w-[386px] md:flex-shrink-0 flex flex-col gap-5 md:gap-[28px]">
               <h3 className="text-white font-bold text-[22px] md:text-[30px] leading-tight md:leading-[35px]">
                 {item.titulo}
               </h3>
@@ -71,8 +70,7 @@ export default function SolucionesAplicaciones() {
                 ))}
               </ul>
             </div>
-            {/* Imagen segunda en mobile */}
-            <div className="w-full order-2 md:order-none">
+            <div className="w-full md:flex-1">
               <img
                 src={item.imagen}
                 alt={item.titulo}

@@ -1,15 +1,17 @@
-import SLHero from './SLHero'
-import SLDescripcion from './SLDescripcion'
-import SLCaracteristicas from './SLCaracteristicas'
-import Contacto from './Contacto'
+import SolucionesHero from './SolucionesHero'
+import SolucionesDescripcion from './SolucionesDescripcion'
+import SolucionesGaleria from './SolucionesGaleria'
+import SolucionesAplicaciones from './SolucionesAplicaciones'
+import CTASection from './CTASection'
 
-export default function SLPage() {
+export default function SolucionesPage() {
   return (
-    <div className="w-full bg-[#030C40] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
-      <SLHero />
-      <SLDescripcion />
-      <SLCaracteristicas />
-      <Contacto />
+    <div className="w-full bg-[#030C40]">
+      <SolucionesHero />
+      <SolucionesDescripcion />
+      <SolucionesGaleria />
+      <SolucionesAplicaciones />
+      <CTASection />
     </div>
   )
 }

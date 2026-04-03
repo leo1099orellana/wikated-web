@@ -6,8 +6,6 @@ const aplicaciones = [
     bullets: ['Municipios', 'Comunas', 'Cooperativas eléctricas'],
     imagen: '/images/sol-app-ciudades.jpg',
     imagenIzquierda: true,
-    gap: 'gap-[59px]',
-    imgWidth: 'w-[626px]', imgHeight: 'h-[417px]', imgRadius: 'rounded-[27px]',
   },
   {
     id: 2,
@@ -16,8 +14,6 @@ const aplicaciones = [
     bullets: ['Countries', 'Barrios cerrados', 'Estaciones lineales'],
     imagen: '/images/sol-app-residencial.jpg',
     imagenIzquierda: false,
-    gap: 'gap-[49px]',
-    imgWidth: 'w-[625px]', imgHeight: 'h-[417px]', imgRadius: 'rounded-[26px]',
   },
   {
     id: 3,
@@ -26,8 +22,6 @@ const aplicaciones = [
     bullets: ['Parques industriales', 'Fábricas', 'Minería y Petróleo', 'Playones logísticos'],
     imagen: '/images/sol-app-industria.jpg',
     imagenIzquierda: true,
-    gap: 'gap-[59px]',
-    imgWidth: 'w-[627px]', imgHeight: 'h-[418px]', imgRadius: 'rounded-[31px]',
   },
   {
     id: 4,
@@ -36,8 +30,6 @@ const aplicaciones = [
     bullets: ['Shoppings', 'Centros comerciales', 'Estaciones de servicio'],
     imagen: '/images/sol-app-comercio.jpg',
     imagenIzquierda: false,
-    gap: 'gap-[59px]',
-    imgWidth: 'w-[627px]', imgHeight: 'h-[418px]', imgRadius: 'rounded-[35px]',
   },
   {
     id: 5,
@@ -46,8 +38,6 @@ const aplicaciones = [
     bullets: ['Autopistas', 'Aeropuertos', 'Puertos', 'Terminales de buses', 'Estaciones de tren'],
     imagen: '/images/sol-app-transporte.jpg',
     imagenIzquierda: true,
-    gap: 'gap-[59px]',
-    imgWidth: 'w-[627px]', imgHeight: 'h-[416px]', imgRadius: 'rounded-[32px]',
   },
   {
     id: 6,
@@ -56,8 +46,6 @@ const aplicaciones = [
     bullets: ['Estadios', 'Canchas', 'Espacios turísticos', 'Monumentos'],
     imagen: '/images/sol-app-turismo.jpg',
     imagenIzquierda: false,
-    gap: 'gap-[59px]',
-    imgWidth: 'w-[629px]', imgHeight: 'h-[417px]', imgRadius: 'rounded-[33px]',
   },
 ]
 
@@ -65,33 +53,31 @@ export default function SolucionesAplicaciones() {
   return (
     <section className="w-full bg-[#172555]">
       {aplicaciones.map((item) => (
-        <div key={item.id} className="w-full py-16">
-          <div
-            className={`max-w-6xl mx-auto px-6 flex items-center ${item.gap} ${
-              item.imagenIzquierda ? 'flex-row' : 'flex-row-reverse'
-            }`}
-          >
-            <div className="flex-shrink-0">
-              <img
-                src={item.imagen}
-                alt={item.titulo}
-                className={`object-cover shadow-[0px_4px_4px_rgba(0,0,0,0.25)] ${item.imgWidth} ${item.imgHeight} ${item.imgRadius}`}
-              />
-            </div>
-            <div className="flex flex-col w-[386px] gap-[28px]">
-              <h3 className="text-white font-bold text-[30px] leading-[35px]">
+        <div key={item.id} className="w-full py-10 md:py-16 border-t border-white/10">
+          <div className={`max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8 md:gap-[59px] ${
+            item.imagenIzquierda ? 'md:flex-row' : 'md:flex-row-reverse'
+          }`}>
+            {/* Texto primero en mobile */}
+            <div className="w-full md:w-[386px] md:flex-shrink-0 flex flex-col gap-5 md:gap-[28px] order-1 md:order-none">
+              <h3 className="text-white font-bold text-[22px] md:text-[30px] leading-tight md:leading-[35px]">
                 {item.titulo}
               </h3>
-              <p className="text-white font-normal text-base leading-[170%]">
+              <p className="text-white font-normal text-sm md:text-base leading-[170%]">
                 {item.descripcion}
               </p>
               <ul className="flex flex-col gap-2">
                 {item.bullets.map((b) => (
-                  <li key={b} className="text-white text-base font-normal">
-                    • {b}
-                  </li>
+                  <li key={b} className="text-white text-sm md:text-base font-normal">• {b}</li>
                 ))}
               </ul>
+            </div>
+            {/* Imagen segunda en mobile */}
+            <div className="w-full order-2 md:order-none">
+              <img
+                src={item.imagen}
+                alt={item.titulo}
+                className="w-full object-cover h-[220px] md:h-[417px] rounded-[23px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
+              />
             </div>
           </div>
         </div>

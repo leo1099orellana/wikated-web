@@ -5,42 +5,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const tarjetas = [
-  {
-    id: 1,
-    iconoSrc: '/images/alumbrado1.png',
-    bullets: ['Modernizamos el alumbrado público y mejoramos su calidad.'],
-  },
-  {
-    id: 2,
-    iconoSrc: '/images/foco.png',
-    bullets: ['Reducimos el consumo energético y los costos operativos.'],
-  },
-  {
-    id: 3,
-    iconoSrc: '/images/mantenimiento.png',
-    bullets: ['Aceleramos los tiempos de reparación y mantenimiento.'],
-  },
-  {
-    id: 4,
-    iconoSrc: '/images/carrusel-eco.png',
-    bullets: ['Ayudamos a reducir la huella de carbono.'],
-  },
-  {
-    id: 5,
-    iconoSrc: '/images/rueda.png',
-    bullets: ['Permitimos gestionar toda la red en tiempo real.'],
-  },
-  {
-    id: 6,
-    iconoSrc: '/images/escudo.png',
-    bullets: ['Contribuimos a mejorar la satisfacción y seguridad.'],
-  },
+  { id: 1, titulo: 'Para las ciudades', iconoSrc: '/images/alumbrado1.png', bullets: ['Modernizamos el alumbrado público y mejoramos su calidad.'] },
+  { id: 2, titulo: 'Para los ciudadanos', iconoSrc: '/images/foco.png', bullets: ['Reducimos el consumo energético y los costos operativos.'] },
+  { id: 3, titulo: 'Para los operadores', iconoSrc: '/images/mantenimiento.png', bullets: ['Aceleramos los tiempos de reparación y mantenimiento.'] },
+  { id: 4, titulo: 'Para el medio ambiente', iconoSrc: '/images/carrusel-eco.png', bullets: ['Ayudamos a reducir la huella de carbono.'] },
+  { id: 5, titulo: 'Para el medio ambiente', iconoSrc: '/images/rueda.png', bullets: ['Permitimos gestionar toda la red en tiempo real.'] },
+  { id: 6, titulo: 'Para la seguridad', iconoSrc: '/images/escudo.png', bullets: ['Contribuimos a mejorar la satisfacción y seguridad.'] },
 ];
 
 export default function NosotrosCarrusel() {
   return (
-    <section className="w-full py-24 bg-[linear-gradient(180deg,#030C40_0%,#172555_86.62%)] overflow-hidden">
-      <div className="relative w-full max-w-[1272px] mx-auto overflow-hidden px-16">
+    <section className="w-full py-12 md:py-24 bg-[linear-gradient(180deg,#030C40_0%,#172555_86.62%)] overflow-hidden">
+      <div className="relative w-full max-w-[1272px] mx-auto px-10 md:px-16">
 
         <button
           type="button"
@@ -55,33 +31,26 @@ export default function NosotrosCarrusel() {
         <Swiper
           modules={[Navigation]}
           navigation={{ prevEl: ".swiper-prev-btn", nextEl: ".swiper-next-btn" }}
-          spaceBetween={24}
-          slidesPerView={3}
+          spaceBetween={16}
+          slidesPerView={1}
           centeredSlides={true}
           loop={true}
-          className="w-full !h-[390px]"
+          breakpoints={{
+            768: { slidesPerView: 3, spaceBetween: 24 }
+          }}
+          className="w-full !h-[320px] md:!h-[390px]"
         >
           {tarjetas.map((t, index) => (
             <SwiperSlide
               key={index}
-              className="!h-[340px] !mt-[25px] [&.swiper-slide-active]:!h-[390px] [&.swiper-slide-active]:!mt-0 transition-[height,margin-top] duration-300"
+              className="!h-[300px] md:!h-[340px] md:!mt-[25px] md:[&.swiper-slide-active]:!h-[390px] md:[&.swiper-slide-active]:!mt-0 transition-[height,margin-top] duration-300"
             >
-              <div className="h-full w-full flex flex-col items-center justify-center text-center gap-[14px] px-[40px] bg-gradient-to-b from-[#010729] to-[#182860] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] rounded-[23px]">
-                <img
-                  src={t.iconoSrc}
-                  alt=""
-                  className="w-[72px] h-[60px] object-contain flex-shrink-0"
-                />
-                <div className="flex flex-col gap-[4px]">
-                  {t.bullets.map((b, bIdx) => (
-                    <p
-                      key={bIdx}
-                      className="text-white font-semibold text-[18px] leading-[26px] [text-shadow:0px_4px_4px_rgba(0,0,0,0.25)]"
-                    >
-                      {b}
-                    </p>
-                  ))}
-                </div>
+              <div className="h-full w-full flex flex-col items-center justify-center text-center gap-[14px] px-[30px] md:px-[40px] bg-gradient-to-b from-[#010729] to-[#182860] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] rounded-[23px]">
+                <img src={t.iconoSrc} alt={t.titulo} className="w-[60px] h-[50px] md:w-[72px] md:h-[60px] object-contain flex-shrink-0" />
+                <p className="text-white font-bold text-[16px] leading-tight">{t.titulo}</p>
+                {t.bullets.map((b, bIdx) => (
+                  <p key={bIdx} className="text-white font-normal text-sm md:text-[18px] md:leading-[26px]">{b}</p>
+                ))}
               </div>
             </SwiperSlide>
           ))}
@@ -99,5 +68,5 @@ export default function NosotrosCarrusel() {
 
       </div>
     </section>
-  );
+  )
 }

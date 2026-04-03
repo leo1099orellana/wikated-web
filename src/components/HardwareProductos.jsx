@@ -33,7 +33,6 @@ export default function HardwareProductos() {
     <section className="w-full py-12 md:py-16 px-6 bg-[#141E4B]">
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-6">
 
-        {/* Mobile: columna única. Desktop: filas de 3 y 2 */}
         <div className="block md:hidden w-full flex flex-col gap-6">
           {productos.map((p) => <ProductCard key={p.id} producto={p} />)}
         </div>

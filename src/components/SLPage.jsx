@@ -1,16 +1,14 @@
-import SolucionesHero from './SolucionesHero'
-import SolucionesDescripcion from './SolucionesDescripcion'
-import SolucionesGaleria from './SolucionesGaleria'
-import SolucionesAplicaciones from './SolucionesAplicaciones'
+import SLHero from './SLHero'
+import SLDescripcion from './SLDescripcion'
+import SLCaracteristicas from './SLCaracteristicas'
 import CTASection from './CTASection'
 
-export default function SolucionesPage() {
+export default function SLPage() {
   return (
     <div className="w-full bg-[#030C40]">
-      <SolucionesHero />
-      <SolucionesDescripcion />
-      <SolucionesGaleria />
-      <SolucionesAplicaciones />
+      <SLHero />
+      <SLDescripcion />
+      <SLCaracteristicas />
       <CTASection />
     </div>
   )

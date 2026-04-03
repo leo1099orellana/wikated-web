@@ -61,29 +61,26 @@ export default function SLCaracteristicas() {
   return (
     <section className="w-full">
       {caracteristicas.map((item) => (
-        <div
-          key={item.id}
-          className={`w-full py-16 ${item.fondo}`}
-        >
-          <div
-            className={`max-w-6xl mx-auto px-6 flex items-center gap-[66px] ${
-              item.imagenIzquierda ? 'flex-row' : 'flex-row-reverse'
-            }`}
-          >
-            <div className="w-[55%] flex-shrink-0">
+        <div key={item.id} className={`w-full py-10 md:py-16 ${item.fondo}`}>
+          <div className={`max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8 md:gap-[66px] ${
+            item.imagenIzquierda ? 'md:flex-row' : 'md:flex-row-reverse'
+          }`}>
+            {/* Texto siempre primero en mobile */}
+            <div className="w-full md:w-[45%] flex flex-col gap-5 md:gap-7 order-1 md:order-none">
+              <h3 className="text-white font-bold text-[22px] md:text-[30px] leading-tight md:leading-[35px]">
+                {item.titulo}
+              </h3>
+              <p className="text-white font-normal text-sm md:text-base leading-[170%]">
+                {item.descripcion}
+              </p>
+            </div>
+            {/* Imagen siempre segunda en mobile */}
+            <div className="w-full md:w-[55%] flex-shrink-0 order-2 md:order-none">
               <img
                 src={item.imagen}
                 alt={item.titulo}
-                className="w-full object-cover h-[300px] rounded-[23px] opacity-[0.79] drop-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
+                className="w-full object-cover h-[220px] md:h-[300px] rounded-[23px] opacity-[0.79] drop-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
               />
-            </div>
-            <div className="w-[45%] flex flex-col gap-7">
-              <h3 className="text-white font-bold text-[30px] leading-[35px]">
-                {item.titulo}
-              </h3>
-              <p className="text-white font-normal text-base leading-[170%]">
-                {item.descripcion}
-              </p>
             </div>
           </div>
         </div>

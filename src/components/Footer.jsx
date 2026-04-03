@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full flex flex-col items-center justify-center text-center bg-[#030C40] h-[270px] gap-[25px]">
+    <footer className="w-full flex flex-col items-center justify-center text-center bg-[#030C40] h-[270px] gap-[25px] pb-20 md:pb-0">
       <a href="#" className="flex flex-col items-center gap-2">
         <img
           src="/images/logo-kiwatec.png"

@@ -1,14 +1,14 @@
 export default function ContactoReunion() {
   return (
-    <section className="relative w-full h-[456px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[456px] flex items-center justify-center overflow-hidden py-16 md:py-0">
       <div className="absolute inset-0 bg-[url('/images/cta-ciudad.jpg')] bg-cover bg-[center_40%]" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,#1F2E61_0%,#07042A_100%)] opacity-[0.65]" />
 
       <div className="relative z-10 text-center max-w-2xl mx-auto px-6">
-        <h2 className="text-white font-bold text-[39px] leading-[51px] mb-4">
+        <h2 className="text-white font-bold text-[26px] md:text-[39px] leading-[34px] md:leading-[51px] mb-4">
           Agende una reunión con nuestro equipo
         </h2>
-        <p className="text-white font-medium text-[18px] leading-[28px] mb-8">
+        <p className="text-white font-medium text-[15px] md:text-[18px] leading-[24px] md:leading-[28px] mb-8">
           Coordine una reunión técnica o comercial para evaluar su proyecto y
           conocer cómo nuestras soluciones de iluminación inteligente pueden
           optimizar su infraestructura.

@@ -2,7 +2,7 @@ import SolucionesHero from './SolucionesHero'
 import SolucionesDescripcion from './SolucionesDescripcion'
 import SolucionesGaleria from './SolucionesGaleria'
 import SolucionesAplicaciones from './SolucionesAplicaciones'
-import CTASection from './CTASection'
+import Contacto from './Contacto'
 
 export default function SolucionesPage() {
   return (
@@ -11,7 +11,7 @@ export default function SolucionesPage() {
       <SolucionesDescripcion />
       <SolucionesGaleria />
       <SolucionesAplicaciones />
-      <CTASection />
+      <Contacto />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import SLHero from './SLHero'
 import SLDescripcion from './SLDescripcion'
 import SLCaracteristicas from './SLCaracteristicas'
-import CTASection from './CTASection'
+import Contacto from './Contacto'
 
 export default function SLPage() {
   return (
@@ -9,7 +9,7 @@ export default function SLPage() {
       <SLHero />
       <SLDescripcion />
       <SLCaracteristicas />
-      <CTASection />
+      <Contacto />
     </div>
   )
 }

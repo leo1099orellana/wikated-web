@@ -8,19 +8,19 @@ const productos = [
 
 function ProductCard({ producto }) {
   return (
-    <div className="flex flex-col items-center text-center gap-4 p-6 w-[220px] bg-[#0D1640] border border-white rounded-2xl">
+    <div className="flex flex-col items-center text-center gap-4 p-6 w-full md:w-[220px] bg-[#0D1640] border border-white rounded-2xl">
       <img src={producto.imagen} alt={producto.nombre} className="w-[140px] h-[140px] object-contain" />
-      <div className="w-[205px] w-full border-t border-white" />
+      <div className="w-full border-t border-white" />
       <div>
         <p className="text-white font-bold text-[16px]">{producto.nombre}</p>
         <p className="text-white font-normal text-[14px] mt-1">{producto.descripcion}</p>
       </div>
-      <div className="w-[205px] w-full border-t border-white" />
+      <div className="w-full border-t border-white" />
       <a
         href={producto.ficha}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex items-center justify-center w-[160px] h-[34px] bg-[#0A1233] border border-white/50 rounded-lg text-white text-[13px] font-semibold"
+        className="inline-flex items-center justify-center w-full md:w-[160px] h-[34px] bg-[#0A1233] border border-white/50 rounded-lg text-white text-[13px] font-semibold hover:bg-[#030C40] transition-colors"
       >
         Descargar ficha técnica
       </a>
@@ -29,17 +29,24 @@ function ProductCard({ producto }) {
 }
 
 export default function HardwareProductos() {
-  const fila1 = productos.slice(0, 3)
-  const fila2 = productos.slice(3)
   return (
-    <section className="w-full py-16 px-6 bg-[#141E4B]">
-      <div className="max-w-6xl mx-auto flex flex-col items-center gap-8">
-        <div className="flex justify-center gap-8">
-          {fila1.map((p) => <ProductCard key={p.id} producto={p} />)}
+    <section className="w-full py-12 md:py-16 px-6 bg-[#141E4B]">
+      <div className="max-w-6xl mx-auto flex flex-col items-center gap-6">
+
+        {/* Mobile: columna única. Desktop: filas de 3 y 2 */}
+        <div className="block md:hidden w-full flex flex-col gap-6">
+          {productos.map((p) => <ProductCard key={p.id} producto={p} />)}
         </div>
-        <div className="flex justify-center gap-8">
-          {fila2.map((p) => <ProductCard key={p.id} producto={p} />)}
+
+        <div className="hidden md:flex flex-col items-center gap-8 w-full">
+          <div className="flex justify-center gap-8">
+            {productos.slice(0, 3).map((p) => <ProductCard key={p.id} producto={p} />)}
+          </div>
+          <div className="flex justify-center gap-8">
+            {productos.slice(3).map((p) => <ProductCard key={p.id} producto={p} />)}
+          </div>
         </div>
+
       </div>
     </section>
   )
